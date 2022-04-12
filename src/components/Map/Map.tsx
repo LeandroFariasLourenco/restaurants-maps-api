@@ -77,6 +77,7 @@ const MapContainer = ({
   }, [placeId, getRestaurantsById]);
 
   return (
+    /*@ts-ignore */
     <Map
       google={google}
       centerAroundCurrentLocation
@@ -85,9 +86,10 @@ const MapContainer = ({
       {...props}
     >
       {useObserver(() => (
-        mapContext.restaurants.map((restaurant) => (
+        mapContext.restaurants.map((restaurant: any) => (
           <Marker
             key={restaurant.place_id}
+            /*@ts-ignore */
             name={restaurant.name}
             position={{
               lat: restaurant.geometry.location.lat(),

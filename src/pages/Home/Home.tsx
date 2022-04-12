@@ -13,7 +13,7 @@ const Home = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [placeId, setPlaceId] = useState(null);
-  const mapContext = useContext(MapContext);
+  const mapContext: any = useContext(MapContext);
 
   const settings = {
     dots: false,
@@ -54,7 +54,7 @@ const Home = () => {
             <Input
               value={inputValue}
               onKeyPress={handleKeyPress}
-              onChange={(event) => {
+              onChange={(event: any) => {
                 setInputValue(event.target.value);
               }}
             />
